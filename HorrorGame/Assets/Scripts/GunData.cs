@@ -12,5 +12,5 @@ public class GunData : ScriptableObject
     public int magCapacity = 25; // 탄창 용량
 
     public float timeBetFire = 0.12f; // 총알 발사 간격
-    public float reloadTime = 1.8f; // 재장전 소요 시간
+    public float reloadTime = 3.6f; // 재장전 소요 시간
 }

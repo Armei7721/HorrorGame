@@ -160,18 +160,18 @@ public class Gun : MonoBehaviour {
         gunAudioPlayer.PlayOneShot(gunData.reloadClip);
 
         // 재장전 소요 시간 만큼 처리를 쉬기
-        yield return new WaitForSeconds(gunData.reloadTime);
-
+        yield return new WaitForSeconds (gunData.reloadTime);
+       
         // 탄창에 채울 탄약을 계산한다
         int ammoToFill = gunData.magCapacity - magAmmo;
 
         // 탄창에 채워야할 탄약이 남은 탄약보다 많다면,
         // 채워야할 탄약 수를 남은 탄약 수에 맞춰 줄인다
-        if (ammoRemain < ammoToFill)
-        {
+            if (ammoRemain < ammoToFill)
+            {
             ammoToFill = ammoRemain;
-        }
-
+            }
+        
         // 탄창을 채운다
         magAmmo += ammoToFill;
         // 남은 탄약에서, 탄창에 채운만큼 탄약을 뺸다
@@ -179,5 +179,13 @@ public class Gun : MonoBehaviour {
 
         // 총의 현재 상태를 발사 준비된 상태로 변경
         state = State.Ready;
+
+
+
+    }
+    private void Update()
+    {
+        Debug.Log(state);
+        //Debug.Log(magAmmo);
     }
 }
